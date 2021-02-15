@@ -1,9 +1,0 @@
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/bin/Debug/ksql-machina.Views.dll
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/bin/Debug/ksql-machina.Views.pdb
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/bin/Debug/appsettings.Development.json
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/bin/Debug/appsettings.json
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/bin/Debug/ksql-machina.dll
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/bin/Debug/ksql-machina.pdb
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/obj/Debug/docker-compose.dcprojAssemblyReference.cache
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache
-/Users/brunofillion/git/ksql-machina/src/ksql-machina/obj/Debug/docker-compose.dcproj.CopyComplete
