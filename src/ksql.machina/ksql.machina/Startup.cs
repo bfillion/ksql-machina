@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -50,6 +51,8 @@ namespace ksql.machina
             {
                 app.UseExceptionHandler("/Error");
             }
+
+            app.UseSerilogRequestLogging();
 
             app.UseRequestLocalization();
             app.UseStaticFiles();
