@@ -1,0 +1,33 @@
+services:
+  ksql-machina:
+    build:
+      context: /Users/brunofillion/git/ksql-machina/src/ksql-machina
+      dockerfile: ksql-machina/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: ksql-machina
+      target: base
+    container_name: ksql-machina
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: ksqlmachina:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/ksql-machina.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 8080
+    tty: true
+    volumes:
+    - /Users/brunofillion/git/ksql-machina/src/ksql-machina/ksql-machina:/app:rw
+    - /Users/brunofillion/vsdbg/vs2017u5:/remote_debugger:rw
+    - /Users/brunofillion/.nuget/packages:/root/.nuget/packages:ro
+    - /Users/brunofillion/git/ksql-machina/src/ksql-machina:/src:rw
+version: '3.4'

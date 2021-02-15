@@ -1,0 +1,12 @@
+services:
+  ksql-machina:
+    build:
+      context: /Users/brunofillion/git/ksql-machina/src/ksql-machina
+      dockerfile: ksql-machina/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: ksqlmachina
+    ports:
+    - target: 8080
+version: '3.4'
