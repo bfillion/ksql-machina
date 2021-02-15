@@ -20,7 +20,9 @@ namespace ksql.machina
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                    .UseUrls("http://*:8080")
+                    .UseStartup<Startup>();
                 });
     }
 }
