@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ksql.machina", "ksql.machina\ksql.machina.csproj", "{A5DAAA93-C834-433F-8E03-6945ADD8271A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{71DAA949-42B8-48A4-A942-9520190A2DA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5DAAA93-C834-433F-8E03-6945ADD8271A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5DAAA93-C834-433F-8E03-6945ADD8271A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5DAAA93-C834-433F-8E03-6945ADD8271A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5DAAA93-C834-433F-8E03-6945ADD8271A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71DAA949-42B8-48A4-A942-9520190A2DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DAA949-42B8-48A4-A942-9520190A2DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DAA949-42B8-48A4-A942-9520190A2DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DAA949-42B8-48A4-A942-9520190A2DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFE55139-251B-401C-80CA-6897E5571F39}
+	EndGlobalSection
+EndGlobal
