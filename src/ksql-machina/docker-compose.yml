@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ksql-machina:
+    image: ${DOCKER_REGISTRY-}ksqlmachina
+    build:
+      context: .
+      dockerfile: ksql-machina/Dockerfile
