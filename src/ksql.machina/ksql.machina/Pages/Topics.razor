@@ -1,7 +1,45 @@
-﻿@page "/"
+﻿@page "/topics"
+@using System.Threading
+@inject HttpClient HttpClient
 
-<h1>Hello, world!</h1>
+<h1>Liste topics</h1>
 
-Welcome to your new app.
+<button type="button" @onclick="Get">Get data</button>
+<button type="button" @onclick="Stop">Cancel</button>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<p>Bytes read: @byteCount</p>
+
+@code{
+    int byteCount;
+    CancellationTokenSource cts;
+
+    async Task Get()
+    {
+        cts = new CancellationTokenSource();
+
+        using var request = new HttpRequestMessage(HttpMethod.Get, "stream");
+        //request.SetBrowserResponseStreamingEnabled(true); // Enable response streaming
+
+        // Be sure to use HttpCompletionOption.ResponseHeadersRead
+        using var response = await HttpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+        using var stream = await response.Content.ReadAsStreamAsync();
+
+        // Read the response chunk by chunk and count the number of bytes
+        var bytes = new byte[10];
+        while (!cts.Token.IsCancellationRequested)
+        {
+            var read = await stream.ReadAsync(bytes, cts.Token);
+            if (read == 0) // End of stream
+                return;
+
+            byteCount += read;
+
+            // Update the UI
+            StateHasChanged();
+            await Task.Delay(1);
+        }
+    }
+
+    // Cancel the request
+    void Stop() => cts?.Cancel();
+}
